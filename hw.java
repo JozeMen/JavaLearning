@@ -4,17 +4,38 @@ import java.util.Scanner;
 
 class hw {
     public static void task1(double[] numbers) {
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.println(("|") + Math.round(numbers[i]));
-            System.out.println(("|") + Math.floor(numbers[i]));
-            System.out.println(("|") + Math.ceil(numbers[i]));
-
-
-        }
-
+        //Некрасивый вариант таблицы
         // for (double val : numbers) {
         //     System.out.println(Math.round(val) + "     " + Math.floor(val) + "     " + (Math.ceil(val)));
         // }
+
+        //Красивая таблица, но некрасивый код
+        for (double val : numbers) {
+            System.out.print(Math.round(val) + "    " );
+        }
+        System.out.println();
+        for (double val : numbers) {
+            System.out.print( Math.floor(val)+ "  ");
+        }
+        System.out.println();
+        for (double val : numbers) {
+            System.out.print(+ (Math.ceil(val))+ "  ");
+        }
+    }
+
+    public static void task2() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Введите значение: ");
+        if (sc.hasNextInt()) {
+            System.out.println("Тип данных: int");
+        } else if (sc.hasNextDouble()) {
+            System.out.println("Тип данных: double");
+        } else if (sc.hasNextBoolean()) {
+            System.out.println("Тип данных: boolean");
+        } else {
+            System.out.println("Тип данных: String");
+        }
+        sc.close();
     }
     public static void task3() {
         double[] funnyNumbers = {0, 0, 0, 0}; // {кол-во введенных, максимум, минимум, сумма чисел}
@@ -22,6 +43,7 @@ class hw {
         double x ;
         try {
             while(true) {
+                System.out.print("Введите число:  ");
                 x = sc.nextDouble();
                 if (funnyNumbers[0] == 0) {
                     funnyNumbers[1] = x;
@@ -34,15 +56,15 @@ class hw {
             }
         }
         catch(Exception e) {
-
+            System.out.println("Итак, у вас:  ");
         }
         finally{
             sc.close();
-            System.out.println("YOUR numberAmount: "+ funnyNumbers[0]);
-            System.out.println("YOUR max: "+ funnyNumbers[1]);
-            System.out.println("YOUR min: "+ funnyNumbers[2]);
-            System.out.println("YOUR sum: "+ funnyNumbers[3]);
-            System.out.println("YOUR average: "+ (funnyNumbers[3] / funnyNumbers[0]));
+            System.out.println("Кол-во введеныых: "+ Math.round(funnyNumbers[0]));
+            System.out.println("Максимум: "+ funnyNumbers[1]);
+            System.out.println("Минимум: "+ funnyNumbers[2]);
+            System.out.println("Сумма чисел: "+ funnyNumbers[3]);
+            System.out.println("Среднее: "+ (funnyNumbers[3] / funnyNumbers[0]));
 
         }
     }
@@ -52,9 +74,10 @@ class hw {
         int startQueue = 0;
         int curNumber = 0;
         int queueAmount = 0;
+        int maxQueueAmount = 0;
         for(int i = 0; i < size; i++) {
-            curNumber = rnd.nextInt(-10, 10);
-            System.out.print("Curnumber: " + curNumber);
+            curNumber = rnd.nextInt(-1000, 1000);
+            System.out.print("Текущее число: " + curNumber);
             if (startQueue == 0) {
                 queueAmount++;
             }
@@ -63,24 +86,23 @@ class hw {
                     queueAmount++;
                 }
                 else{
+                    maxQueueAmount = maxQueueAmount < queueAmount ? queueAmount : maxQueueAmount;
                     queueAmount = 1;
                 }
             }
             startQueue = curNumber;
-            System.out.println("   CURAMount: "+ queueAmount);
+            System.out.println("   Текущая длина послед-ти: "+ queueAmount);
 
         }
-        System.out.println("AMount: "+ queueAmount);
+        System.out.println("Итоговая длина послед-ти: "+ maxQueueAmount);
     }
     public static void main(String[] args) {
         double[] numbers = {30.0, 10000.1, 12.5, 99.99, 0.0, -23.45, -4.5,-129.675};
         //task1(numbers);
+        //task2();
         //task3();
         task4(10);
-        // Scanner sc = new Scanner(System.in);
-        // System.out.println("Please enter a number");
-        // boolean x = sc.next() instanceof String;
-        // sc.close();
-        // System.out.println(x);
+
+
     }
 }
