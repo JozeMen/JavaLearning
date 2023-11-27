@@ -1,3 +1,4 @@
+package task1;
 public class task1 {
     public static void task(double[] numbers) {
         System.out.print("Изначальное число" + '\t');

@@ -1,3 +1,4 @@
+package task1;
 import java.io.PrintStream;
 
 public class prackt1_2 {
