@@ -1,4 +1,4 @@
-package task2_2;
+package java1_02.task2_2;
 import java.util.Random;
 
 public class GuessRandom{
