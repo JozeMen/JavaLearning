@@ -63,12 +63,17 @@ class ShipmentDocument {
     /**
      * Суммарная стоимость товаров, попадающих в список промо-акции.
      */
-    double promoSum(String[] promoArticles) {
+    double promoSum(String[] promoArticles, double discount) {
         double sum = 0;
+        double discountSum = 0;
+        if  (documentType.equals("sale"))
+        {
+            discountSum = discount;
+        }
         for (Item item : items) {
             for (int j = 0; j < promoArticles.length; j++) {
                 if (item.getItemArticle().equals(promoArticles[j])) {
-                    sum += Math.round(item.getItemQuantity() * item.getItemPrice() * 100) / 100.0;
+                    sum += Math.round(item.getItemQuantity() * (item.getItemPrice() * (1 - discountSum)) * 100) / 100.0;
                     break;
                 }
             }
