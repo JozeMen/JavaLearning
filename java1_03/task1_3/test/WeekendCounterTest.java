@@ -1,8 +1,10 @@
-package java1_03.task1_3;
+package java1_03.task1_3.test;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import java1_03.task1_3.main.WeekendCounter;
 
 public class WeekendCounterTest {
     @Test

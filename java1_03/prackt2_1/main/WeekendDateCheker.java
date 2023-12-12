@@ -1,4 +1,4 @@
-package java1_03.prackt2_1;
+package java1_03.prackt2_1.main;
 
 public class WeekendDateCheker {
     public void getResult(int year, int weekNumber) {

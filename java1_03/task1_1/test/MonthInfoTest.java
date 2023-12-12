@@ -1,8 +1,10 @@
-package java1_03.task1_1;
+package java1_03.task1_1.test;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import java1_03.task1_1.main.MonthInfo;
 
 public class MonthInfoTest {
 

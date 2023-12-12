@@ -1,4 +1,4 @@
-package java1_03.task1_2;
+package java1_03.task1_2.main;
 
 import java.time.DateTimeException;
 import java.time.LocalDateTime;

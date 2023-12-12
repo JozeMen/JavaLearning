@@ -1,8 +1,10 @@
-package java1_03.task1_2;
+package java1_03.task1_2.test;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import java1_03.task1_2.main.DeferDates;
 
 public class DeferDatesTest {
     @Test

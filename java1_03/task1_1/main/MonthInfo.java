@@ -1,4 +1,4 @@
-package java1_03.task1_1;
+package java1_03.task1_1.main;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

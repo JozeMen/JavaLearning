@@ -1,4 +1,4 @@
-package java1_03.task1_3;
+package java1_03.task1_3.main;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
