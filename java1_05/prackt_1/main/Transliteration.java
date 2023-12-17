@@ -1,4 +1,4 @@
-package java1_05.prackt_1;
+package java1_05.prackt_1.main;
 
 public class Transliteration {
     static String[] rusLetters = { "А", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "О", "П",

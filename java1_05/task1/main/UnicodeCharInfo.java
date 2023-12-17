@@ -1,9 +1,9 @@
-package java1_05.task1;
+package java1_05.task1.main;
 
 public class UnicodeCharInfo {
     private static final String DIGIT = "DIGIT";
-    private static final String UPPERCASE_LETTER = "UPPERCASE_LETTER";
-    private static final String LOWERCASE_LETTER = "LOWERCASE_LETTER";
+    private static final String LETTER_UPPER = "LETTER_UPPER";
+    private static final String LETTER_LOWER = "LETTER_LOWER";
     private static final String SPACE = "SPACE";
     private static final String OTHER = "OTHER";
 
@@ -38,9 +38,9 @@ public class UnicodeCharInfo {
         if (Character.isDigit(symbol)) {
             return DIGIT;
         } else if (Character.isUpperCase(symbol)) {
-            return UPPERCASE_LETTER;
+            return LETTER_UPPER;
         } else if (Character.isLowerCase(symbol)) {
-            return LOWERCASE_LETTER;
+            return LETTER_LOWER;
         } else if (Character.isWhitespace(symbol)) {
             return SPACE;
         } else {
@@ -57,17 +57,20 @@ public class UnicodeCharInfo {
         }
     }
 
-    public void getAllInfo() {
+    public String getAllInfo() {
         int intUnicode = getIntUnicode();
         String hexUnicode = getHexUnicode();
         char nextSymbol = getNextSymbol();
         char prevSymbol = getPreviousSymbol();
         String typeSymbol = getSymbolType();
         int alphPosition = getAlphabetPosition();
-        System.out.printf("%d\t %s\t %c\t %c\t %s\t %d\t", intUnicode, hexUnicode, nextSymbol,
+
+        String result = String.format("%d\t %s\t %c\t %c\t %s\t %d\t", intUnicode, hexUnicode, nextSymbol,
                 prevSymbol,
                 typeSymbol,
                 alphPosition);
+        System.out.printf(result);
+                return result;
     }
 
     public UnicodeCharInfo(char ch) {

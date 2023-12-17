@@ -1,4 +1,4 @@
-package java1_05.prackt_2;
+package java1_05.prackt_2.main;
 
 import java.util.ArrayList;
 import java.util.List;
